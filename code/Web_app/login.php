@@ -3,20 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Group-32, Fall 2021">
+  <meta name="author" content="Group-36, Fall 2023">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>JOBIFY - Login</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
+
+
 </head>
 
 <?php
 session_start();
 if (isset($_SESSION['user'])) {
   header('Location: home.php');
+  exit();
 }
+
 include "connectDB.php";
+
 if (isset($_POST['submit'])) {
   if ($_POST['inputEmail'] === "") {
     echo '<div class="alert alert-danger text-center small-box">Email is required</div>';
@@ -66,7 +71,8 @@ if (isset($_POST['submit'])) {
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="inputEmail">E-Mail Address</label>
                     <input type="email" id="inputEmail" class="form-control" name="inputEmail"
-                      placeholder="Enter your email address" value="" required autofocus>
+                      placeholder="Enter your email address" value="" required autofocus
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" title="Please enter a valid email address">
                     <div class="invalid-feedback"> Email is invalid </div>
                   </div>
 
@@ -76,7 +82,7 @@ if (isset($_POST['submit'])) {
                       <a href="forgot.php" class="float-end"> Forgot Password? </a>
                     </div>
                     <input id="password" type="password" name="password" class="form-control"
-                      placeholder="Enter your Password" required>
+                      placeholder="Enter your Password" required><input type="checkbox" id="showPassword"> Show Password
                     <div class="invalid-feedback"> Password is required </div>
                   </div>
 
@@ -85,25 +91,10 @@ if (isset($_POST['submit'])) {
                   </div>
               </div>
               </form>
-              <?php
-              if (isset($_POST['submit']) && ($_POST['inputEmail'] != "") && ($_POST['password'] != "")) {
-                $sql = "SELECT user_pwd FROM user_master where user_email='" . $_POST['inputEmail'] . "'";
-                $result = $conn->query($sql);
-                $row = $result->fetch_assoc();
-                $len = $result->num_rows;
-                $checkPwd = password_verify($_POST['password'], $row["user_pwd"]);
-                if (($len == 1) && ($checkPwd)) {
-                  $_SESSION['user'] = $_POST['inputEmail'];
-                  header('Location: home.php');
-                } else {
-                  echo '<span class="text-center" style="color:#FF0000"> Invalid Email/Password </span><br/>';
-                }
-                $conn->close();
-              }
-              ?>
+
               <div class="card-footer py-3 border-0">
                 <div class="text-center">
-                  Don't have an account? <a href="signup.php" class="text-dark">Create One</a>
+                  Don't have an account? <a href="signup.php" class="text-dark">Sign Up</a>
                 </div>
               </div>
             </div>
@@ -118,8 +109,7 @@ if (isset($_POST['submit'])) {
     </div>
 </div> -->
             <br>
-            <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a
-                href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
+
             <br>
           </div>
           <script>
