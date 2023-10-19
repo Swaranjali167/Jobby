@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="author" content="Group-32, Fall 2021">
+  <meta name="author" content="Group-36, Fall 2023">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOBBY - Dashboard</title>
+  <title>JOBIFY - Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
@@ -18,7 +18,7 @@
 <body>
 
   <div class="header">
-    <img src="logo.jpg" alt="logo">
+    <img src="logos.jpg" alt="logo">
     <div class="header-right">
       <a href="home.php">Home</a>
       <a class="active" href="register.php">Job Board</a>
