@@ -58,7 +58,7 @@ include "connectDB.php";
                     array_push($namearray, $row["user_lname"]);
                   }
                   echo "<td width='80' style='text-align:center;'>";
-                  echo "<b>Name</b>\t\t\t&emsp&emsp&emsp&emsp;" . ucfirst($namearray[0]) . "<br>";
+                  echo "<b>Name</b> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;" . ucfirst($namearray[0]) . "<br>";
                   echo "<b>User Email</b>\t\t\t&emsp;", $user_email;
                   echo "</td>";
                   ?>
