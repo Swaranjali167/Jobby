@@ -8,7 +8,7 @@
   <title>JOBIFY- Home</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
 </head>
 
 <head>
@@ -100,8 +100,7 @@ while ($row = $userJbResult->fetch_assoc()) {
           </div>
         </div>
         <br>
-        <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a
-            href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
+
         <br>
       </div>
     </section>
