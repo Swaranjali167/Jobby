@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta name="author" content="Group-32, Fall 2021">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOBBY - Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>JOBIFY - Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -19,7 +20,7 @@ include "connectDB.php";
 if (isset($_POST['submit'])) {
   if ($_POST['inputEmail'] === "") {
     echo '<div class="alert alert-danger text-center small-box">Email is required</div>';
-  } elseif ($_POST['inputEmail'] === "" ||  $_POST['password'] === "") {
+  } elseif ($_POST['inputEmail'] === "" || $_POST['password'] === "") {
     echo '<div class="alert alert-danger text-center small-box">Password is required</div>';
   } elseif (!filter_var($_POST['inputEmail'], FILTER_VALIDATE_EMAIL)) {
     echo '<div class="alert alert-danger text-center small-box">Invalid email format</div>';
@@ -56,7 +57,7 @@ if (isset($_POST['submit'])) {
         <div class="row justify-content-sm-center h-100">
           <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
             <div class="text-center my-5">
-              <img src="logo.jpg" alt="logo">
+              <img src="logos.jpg" alt="logo">
             </div>
             <div class="card shadow-lg">
               <div class="card-body p-5">
@@ -64,7 +65,8 @@ if (isset($_POST['submit'])) {
                 <form method="POST" action="" class="needs-validation" novalidate="" autocomplete="off">
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="inputEmail">E-Mail Address</label>
-                    <input type="email" id="inputEmail" class="form-control" name="inputEmail" placeholder="Enter your email address" value="" required autofocus>
+                    <input type="email" id="inputEmail" class="form-control" name="inputEmail"
+                      placeholder="Enter your email address" value="" required autofocus>
                     <div class="invalid-feedback"> Email is invalid </div>
                   </div>
 
@@ -73,7 +75,8 @@ if (isset($_POST['submit'])) {
                       <label class="mb-2 text-muted" for="inputLocation">Password</label>
                       <a href="forgot.php" class="float-end"> Forgot Password? </a>
                     </div>
-                    <input id="password" type="password" name="password" class="form-control" placeholder="Enter your Password" required>
+                    <input id="password" type="password" name="password" class="form-control"
+                      placeholder="Enter your Password" required>
                     <div class="invalid-feedback"> Password is required </div>
                   </div>
 
@@ -115,14 +118,15 @@ if (isset($_POST['submit'])) {
     </div>
 </div> -->
             <br>
-            <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
+            <div align="center">Made with <span style="color: #e25555;">&hearts;</span>. Contribute on <a
+                href="https://github.com/sak007/SRIJAS" class="text-dark" target="_blank">GitHub</a>.</div>
             <br>
           </div>
           <script>
             var showPasswordCheckbox = document.getElementById("showPassword");
             var passwordInput = document.getElementById("password");
 
-            showPasswordCheckbox.addEventListener("change", function() {
+            showPasswordCheckbox.addEventListener("change", function () {
               if (showPasswordCheckbox.checked) {
                 passwordInput.type = "text";
               } else {

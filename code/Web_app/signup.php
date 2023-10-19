@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="author" content="Group-32, Fall 2021">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JOBBY - Signup</title>
+  <title>JOBIFY - Signup</title>
   <?php
   /**
    * This segment of code is responsible for loading entries from the job_master
@@ -58,7 +58,7 @@
         <div class="row justify-content-sm-center h-100">
           <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
             <div class="text-center my-5">
-              <img src="logo.jpg" alt="logo">
+              <img src="logos.jpg" alt="logo">
               <!-- <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100"> -->
               <!-- <h2 class="display-4 font-weight-bold" style="font-size:15px;display:inline-block">S.R.I.J.A.S. (Smart Resume Interpreter And Job Alerts System)</h2> -->
             </div>
