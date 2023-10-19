@@ -47,8 +47,7 @@ This is our submission for the Project for Software Engineering CSC 510 Fall 202
 
 ## Working Demo
 
-https://user-images.githubusercontent.com/28624935/143986517-158d58bf-e920-431f-9170-33ea5e8ff292.mp4
-
+https://github.com/Swaranjali167/Jobify/assets/72608245/17107cf3-d1af-4586-8ef1-bcd36a8ab25d
 
 ## What's new? (Delta, New Features)
 - Code Refactoring: Modularization the codebase. We reconfigured the database and implemented cascading features to simplify operations. Also, we split the functionalities into multiple files to create modularity and reduce single source of failure.
