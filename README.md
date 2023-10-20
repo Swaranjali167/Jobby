@@ -82,6 +82,7 @@ https://github.com/Swaranjali167/Jobify/assets/72608245/17107cf3-d1af-4586-8ef1-
 - Execute Jobify/code/Database/schema/srijas.sql file in the created db
 - Update your DB credentials in the db.properties.template file.
 - Provide executable permissions for setup.sh and execute the file.
+- Update the admin's email ID and password in the main.py file for sending job notification mail.
 This will install all the required packages from requirements.txt and create a parameters.json file which is required for accessing the DB.
 - You can either choose to host the project on any online hosting platform or use an application to test the application locally. We used two applications to host the webpage in local -> XAMPP and MAMP Pro
   * [MAMP Pro](https://www.mamp.info/en/downloads/)
