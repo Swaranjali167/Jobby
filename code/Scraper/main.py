@@ -129,9 +129,9 @@ def generate_job_board_role_mp(user_job_board_list, user_info):
 def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
     port = 587
     smtp_server = "smtp.gmail.com"
-    login = "swaranjalimanik19@siesgst.ac.in"
-    password = "sefall2023"
-    sender = "swaranjalimanik19@siesgst.ac.in"
+    login = "jobify@gmail.com"
+    password = "**********"
+    sender = "jobify@gmail.com"
     for user in user_info.keys():
         receiver = user
         jobs = user_jobs[user]
