@@ -7,6 +7,8 @@ services:
       - jobify-app
     environment:
       MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test: ["CMD", "mysqladmin", "-u root", "-p$MYSQL_ROOT_PASSWORD",  "ping", "-h", "localhost"]
     ports:
       - "3306:3306"
     volumes: 
@@ -22,7 +24,9 @@ services:
     networks:
       - jobify-app
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+        restart: true
     expose:
       - 8000
 networks:
