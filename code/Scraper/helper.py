@@ -12,7 +12,7 @@ def db_connect():
     user_name = data['user_name']
     password = data['password']
     db_name = data['db_name']
-    connection = mysql.connector.connect(host=server_name, database=db_name, user=user_name, password=password)
+    connection = mysql.connector.connect(host=server_name, database=db_name, user=user_name, password=password,port=3306)
     return connection
 
 
