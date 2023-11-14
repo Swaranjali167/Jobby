@@ -13,7 +13,7 @@ def test_db_connect(mocker):
     }
 
     class mock_connection:
-        def __init__(self, host, database, user, password):
+        def __init__(self, host, database, user, password,port):
             pass
 
         def cursor(a):
