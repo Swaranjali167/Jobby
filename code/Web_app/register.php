@@ -1,3 +1,24 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location: login.php');
+}
+include "connectDB.php";
+$user_email = $_SESSION['user'];
+$user = $user_email;
+$userJbQuery = "select name from job_board";
+$userJbResult = $conn->query($userJbQuery);
+$job_board_array = array();
+while ($row = $userJbResult->fetch_assoc()) {
+  array_push($job_board_array, $row["name"]);
+}
+$userJbSelectedQuery = "select name from job_board where job_board_id in (select un.job_board_id from user_notification un, user_master um where un.user_id = um.user_id and user_email = '" . $user_email . "')";
+$userJbselectedResult = $conn->query($userJbSelectedQuery);
+$job_board_selected_array = array();
+while ($row = $userJbselectedResult->fetch_assoc()) {
+  array_push($job_board_selected_array, $row["name"]);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,27 +49,6 @@
   </div>
 
 </body>
-<?php
-session_start();
-if (!isset($_SESSION['user'])) {
-  header('Location: login.php');
-}
-include "connectDB.php";
-$user_email = $_SESSION['user'];
-$user = $user_email;
-$userJbQuery = "select name from job_board";
-$userJbResult = $conn->query($userJbQuery);
-$job_board_array = array();
-while ($row = $userJbResult->fetch_assoc()) {
-  array_push($job_board_array, $row["name"]);
-}
-$userJbSelectedQuery = "select name from job_board where job_board_id in (select un.job_board_id from user_notification un, user_master um where un.user_id = um.user_id and user_email = '" . $user_email . "')";
-$userJbselectedResult = $conn->query($userJbSelectedQuery);
-$job_board_selected_array = array();
-while ($row = $userJbselectedResult->fetch_assoc()) {
-  array_push($job_board_selected_array, $row["name"]);
-}
-?>
 
 <body>
   <div class="bg">

@@ -1,3 +1,23 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location: login.php');
+}
+include "connectDB.php";
+$user_email = $_SESSION['user'];
+$user = $user_email;
+// echo "User Job Boards";
+$userJbQuery = "select jb.name, jb.job_board_id from job_board jb, user_notification un, user_master um where jb.job_board_id = un.job_board_id and un.user_id = um.user_id and um.user_email = '" . $user_email . "'";
+$userJbResult = $conn->query($userJbQuery);
+$job_board_array = array();
+$job_board_ids = array();
+while ($row = $userJbResult->fetch_assoc()) {
+  array_push($job_board_array, $row["name"]);
+  array_push($job_board_ids, $row["job_board_id"]);
+  // echo $job_board_array[0];
+  // echo "<br>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,26 +48,6 @@
   </div>
 
 </body>
-<?php
-session_start();
-if (!isset($_SESSION['user'])) {
-  header('Location: login.php');
-}
-include "connectDB.php";
-$user_email = $_SESSION['user'];
-$user = $user_email;
-// echo "User Job Boards";
-$userJbQuery = "select jb.name, jb.job_board_id from job_board jb, user_notification un, user_master um where jb.job_board_id = un.job_board_id and un.user_id = um.user_id and um.user_email = '" . $user_email . "'";
-$userJbResult = $conn->query($userJbQuery);
-$job_board_array = array();
-$job_board_ids = array();
-while ($row = $userJbResult->fetch_assoc()) {
-  array_push($job_board_array, $row["name"]);
-  array_push($job_board_ids, $row["job_board_id"]);
-  // echo $job_board_array[0];
-  // echo "<br>";
-}
-?>
 
 <body>
   <div class="bg">

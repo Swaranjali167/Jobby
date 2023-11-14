@@ -13,7 +13,17 @@ services:
       - "3306:3306"
     volumes: 
       - ./code/Database/schema/:/docker-entrypoint-initdb.d
-
+  webapp:
+    build:
+      context: ./code/Web_app
+    networks:
+      - jobify-app
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    ports:
+      - 8080:80
   scraper:
     build: 
       context: ./code/Scraper
