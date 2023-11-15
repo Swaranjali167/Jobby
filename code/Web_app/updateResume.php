@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+  header('Location: login.php');
+}
+include "connectDB.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +17,6 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" href="css/header.css">
 </head>
-<?php
-session_start();
-if (!isset($_SESSION['user'])) {
-  header('Location: login.php');
-}
-include "connectDB.php";
-?>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">

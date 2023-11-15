@@ -15,12 +15,15 @@ def run():
     connection = helper.db_connect()
     data = get_user_notification_info(connection)
     user_info = generate_user_info(data)
+    print(data)
     user_job_board_list = generate_user_job_board_list(data)
+    print(user_job_board_list)
     job_board_role_mp = generate_job_board_role_mp(user_job_board_list, user_info)
-
+    print(job_board_role_mp)
     all_skills = helper.get_all_skills()
+    print(all_skills)
     job_map = generate_job_map(job_board_role_mp, all_skills)
-
+    print(job_map)
     user_jobs = generate_user_jobs_mp(user_info, user_job_board_list, job_map)
 
     user_skills_map = helper.get_user_skills_map()
@@ -79,6 +82,7 @@ def generate_job_map(job_board_role_mp, all_skills):
     #print("job_board_role_mp",job_board_role_mp)
     job_map = {}
     for jb in job_board_role_mp.keys():
+        print(jb)
         job_map[jb] = {}
         for rl in job_board_role_mp[jb]:
             time.sleep(15)

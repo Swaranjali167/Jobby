@@ -73,6 +73,18 @@ https://github.com/Swaranjali167/Jobify/assets/72608245/17107cf3-d1af-4586-8ef1-
 🔱: Installation Guide
 ---
 - After Cloning the Github repository (git clone https://github.com/Swaranjali167/Jobify) to a desired location on your computer. Please follow the steps given below to set up the project to a working condition.
+
+### Now with support for docker-compose! 
+If you don't want to download mysql, or XAMPP locally, all you need is Docker installed to do these steps. 
+
+- the only file you'll need to edit is [here](./code/Scraper/main.py) for the admins email id and password
+- in the root directory, run:
+  ```
+  docker-compose up
+  ```
+  and then head over to http://localhost:8080 and your application is up and running! 
+
+### Traditional installation
 - Host your MySQL DB using an application by following these steps.
   * **Create a MySQL instance in your local** 
     + [Installation instruction for local](https://dev.mysql.com/doc/mysql-getting-started/en/#mysql-getting-started-installing)
