@@ -110,7 +110,7 @@ def generate_job_map(job_board_role_mp, all_skills):
                     print("Data scraped from simplyhired Website successfully!!\n")
                     print("---------------------------------------------------")
             elif (jb == 'GOINGLOBAL'):
-                j = going_global_scraper.get_jobs(rl[0], rl[1], 10, all_skills)
+                j = going_global_scraper.get_jobs(rl[0], rl[1], 8, all_skills)
                 if j:
                     print("Data scraped from Going global Website successfully!!\n")
                     print("---------------------------------------------------")
@@ -133,9 +133,9 @@ def generate_job_board_role_mp(user_job_board_list, user_info):
 def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
     port = 587
     smtp_server = "smtp.gmail.com"
-    login = "rishabhb1403@gmail.com"
-    password = "sicwfjcxxxaqfwtt"
-    sender = "rishabhb1403@gmail.com"
+    login = "loborobo541@gmail.com"
+    password = "wziswjhsxafvdnyj"
+    sender = "loborobo541@gmail.com"
     for user in user_info.keys():
         receiver = user
         jobs = user_jobs[user]
@@ -144,7 +144,7 @@ def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
         msg = MIMEMultipart()
         msg['From'] = sender
         msg['To'] = receiver
-        msg['Subject'] = 'SRIJAS - Job List'
+        msg['Subject'] = 'Team 41 - Job List'
 
         body = """\n Hi """ + user_info[user][2] + """,\n Good News !! \n We have found top """ + str(len(jobs)) + """ jobs that matches your resume \n"""
         msg.attach(MIMEText(body, 'plain'))
@@ -173,7 +173,7 @@ def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
 
         msg.attach(MIMEText(html, 'html'))
 
-        msg.attach(MIMEText("\n\n Regards, \nTeam SRIJAS", 'plain'))
+        msg.attach(MIMEText("\n\n Regards, \nTeam 41", 'plain'))
         text = msg.as_string()
 
         try:
