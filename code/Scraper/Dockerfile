@@ -16,4 +16,4 @@ ENV PORT=8000
 EXPOSE 8000
 
 # execute the command python main.py (in the WORKDIR) to start the app
-CMD ["python", "main.py"]
+CMD ["python", "scheduled_notifier.py"]

@@ -133,9 +133,9 @@ def generate_job_board_role_mp(user_job_board_list, user_info):
 def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
     port = 587
     smtp_server = "smtp.gmail.com"
-    login = "jobify@gmail.com"
-    password = "**********"
-    sender = "jobify@gmail.com"
+    login = "rishabhb1403@gmail.com"
+    password = "sicwfjcxxxaqfwtt"
+    sender = "rishabhb1403@gmail.com"
     for user in user_info.keys():
         receiver = user
         jobs = user_jobs[user]
@@ -165,6 +165,8 @@ def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
             temp_body += "Match Percentage: " + helper.match_percentage(user_skills[user], job['skills']) + "<br>"
             temp_body += "Matching Skills: " + helper.print_matching_skills(user_skills[user], job['skills']) + "<br>"
             temp_body += "\n"+"<br>"
+
+            helper.insert_into_sql(job['title'], job['url'], job['company_name'], job['job_posted_date'], helper.match_percentage(user_skills[user], job['skills']), helper.print_matching_skills(user_skills[user], job['skills']))
         html_end = """</ol></p></body> </html>"""
 
         html = html_start + temp_body + html_end

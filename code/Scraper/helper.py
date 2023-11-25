@@ -15,6 +15,13 @@ def db_connect():
     connection = mysql.connector.connect(host=server_name, database=db_name, user=user_name, password=password,port=3306)
     return connection
 
+def insert_into_sql(job_title, job_url, job_company_name, job_posted_date, job_match_percentage, job_match_skills):
+    connection = db_connect()
+    insert_query = "INSERT INTO job_web (job_title, job_url, job_company_name, job_posted_date, job_match_percentage, job_match_skills) VALUES (%s, %s, %s, %s, %s, %s)"
+    cursor = connection.cursor()
+    cursor.execute(insert_query, (job_title, job_url, job_company_name, job_posted_date, job_match_percentage, job_match_skills))
+    connection.commit()
+    connection.close()
 
 def get_all_skills():
     connection = db_connect()
