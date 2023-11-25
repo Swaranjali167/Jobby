@@ -1,9 +1,3 @@
-"""
-
-Scraper for GoingGlobal
-
-@author Rithik Jain
-"""
 
 import helper
 import requests

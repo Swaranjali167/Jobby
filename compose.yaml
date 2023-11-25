@@ -39,5 +39,6 @@ services:
         restart: true
     expose:
       - 8000
+
 networks:
   jobify-app: {}
