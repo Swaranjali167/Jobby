@@ -35,19 +35,9 @@ while ($row = $userJbResult->fetch_assoc()) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
-
-  <div class="header">
-    <img src="logos.jpg" alt="logo">
-    <div class="header-right">
-      <a class="active" href="home.php">Home</a>
-      <a href="register.php">Job Board</a>
-      <a href="updateResume.php">Upload Resume</a>
-      <a href="logout.php">Logout</a>
-    </div>
-  </div>
-
-</body>
+<?php
+include "header.php";
+?>
 
 <body>
   <div class="bg">
