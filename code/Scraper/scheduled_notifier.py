@@ -8,9 +8,9 @@ def trigger_job():
     main.run()
 
 
-schedule.every(5).minutes.at(":00").do(trigger_job)
+schedule.every(3).minutes.do(trigger_job)
 # schedule.every().hour.do(trigger_job)
-#schedule.every().day.at("18:05").do(trigger_job)
+#schedule.every().day.at("10:30").do(trigger_job)
 
 while True:
     schedule.run_pending()

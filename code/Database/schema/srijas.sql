@@ -5,6 +5,15 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS srijas DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE srijas;
 
+CREATE TABLE job_web(
+  job_title varchar(100) NOT NULL,
+  job_url varchar(1000) NOT NULL,
+  job_company_name varchar(100) NOT NULL,
+  job_posted_date varchar(10),
+  job_match_percentage varchar (30) NOT NULL,
+  job_match_skills varchar (255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE job_master (
   job_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   job_title varchar(100) NOT NULL

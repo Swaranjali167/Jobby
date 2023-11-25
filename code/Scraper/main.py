@@ -165,6 +165,8 @@ def send_mail(user_jobs, user_info, user_skills,count_per_dashboard):
             temp_body += "Match Percentage: " + helper.match_percentage(user_skills[user], job['skills']) + "<br>"
             temp_body += "Matching Skills: " + helper.print_matching_skills(user_skills[user], job['skills']) + "<br>"
             temp_body += "\n"+"<br>"
+
+            helper.insert_into_sql(job['title'], job['url'], job['company_name'], job['job_posted_date'], helper.match_percentage(user_skills[user], job['skills']), helper.print_matching_skills(user_skills[user], job['skills']))
         html_end = """</ol></p></body> </html>"""
 
         html = html_start + temp_body + html_end
